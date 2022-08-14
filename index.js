@@ -13,20 +13,23 @@ loginBtn.addEventListener("click", () => {
 depostiBtn.addEventListener("click", () => {
   // console.log("I am Deposit Clicked")
   let value = document.getElementById("depositInput").value;
-  let currentAmount = document.getElementById("currentDeposit").innerText;
-  let currentBalance = document.getElementById("currentBalance").innerText;
-
   let intValue = parseInt(value);
+
+  let currentAmount = document.getElementById("currentDeposit").innerText;
   let intCurrentAmount = parseInt(currentAmount);
+
+  let currentBalance = document.getElementById("currentBalance").innerText;
   let intCurrentBalance = parseInt(currentBalance);
+
 
   let result = intValue + intCurrentAmount;
   let strResult = String(result);
+  document.getElementById("currentDeposit").innerText = strResult;
+
   let balnce = intCurrentBalance + intValue;
   let strBalnce = String(balnce);
-  
-  document.getElementById("currentDeposit").innerText = strResult;
   document.getElementById("currentBalance").innerText = strBalnce;
+  
   document.getElementById("depositInput").value = ""
   
 });
